@@ -62,9 +62,9 @@ ActiveRecord::Schema.define(version: 20161230042935) do
     t.string   "vehicle_inspection"
     t.string   "repaired"
     t.text     "url",                limit: 65535
+    t.integer  "maker_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "maker_id"
     t.string   "name"
     t.text     "desc",               limit: 65535
     t.string   "item_order"

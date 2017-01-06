@@ -1,0 +1,367 @@
+// Place all the styles related to the cars controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cars-top{
+  width: 100%;
+  height: 100%;
+}
+
+.car-index-label{
+  padding: 0 7px;
+  margin: 15px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.car-search-area{
+  width: 95%;
+  border: 1px solid #ddd;
+  margin: 0 auto 8px;
+  .car-search-select-area{
+    padding: 10px 10px 0 10px;
+    ul{
+      margin: 0;
+      padding: 0;
+      li{
+        margin-bottom: 5px;
+        list-style-type: none;
+        overflow: hidden;
+        label{
+          width: 16%;
+          float: left;
+          line-height: 38px;
+          margin: 0;
+          color: #fff;
+          background: #4C4C4C;;
+          text-align: center;
+          font-size: 12px;
+        }
+        select{
+          width: 84%;
+          float: left;
+        }
+        .custom-select{
+          border-radius: 1px !important;
+        }
+      }
+      .multiple-select{
+        select{
+          width: 42%;
+          float: left;
+        }
+      }
+    }
+  }
+  .car-search-submit-area{
+    text-align: center;
+    margin: 10px 0;
+    #car-search-submit{
+      padding: 8px 20px;
+      background: #FF8C00;
+      font-weight: bold;
+      color: #fff;
+      width: 95%;
+      border: none;
+      &:hover{
+        background: #FF6928;
+      }
+    }
+  }
+}
+
+.car-area{
+  width: 95%;
+  margin: 0 auto;
+  .car-contents{
+    width: 100%;
+    height: auto;
+    margin-bottom: 8px;
+    border: 1px solid #ddd;
+    &:active{
+      background: #FFEFD5;
+    }
+    .car-contents-top{
+      border-bottom: 1px solid #ddd;
+      overflow: hidden;
+      height: 95px;
+      padding: 8px;
+      position: relative;
+      img{
+        width: 30%;
+        height: 100%;
+        float: left;
+      }
+      .car-contents-top-name{
+        float: left;
+        width: 70%;
+        padding: 5px;
+        color: #4c4747;
+        h2{
+          margin: 0;
+          font-size: 14px;
+        }
+        p{
+          margin: 0;
+          font-size: 12px;
+          position: absolute;
+          bottom: 8px;
+        }
+      }
+    }
+    .car-contents-bottom{
+      overflow: hidden;
+      padding: 8px;
+      .car-price{
+        width: 30%;
+        float: left;
+        ul{
+          padding: 0;
+          margin: 0;
+          li{
+            list-style-type: none;
+            width: 100%;
+            p{
+              margin: 0;
+              font-size: 10px;
+              color: #FF6928;
+            }
+            .car-price-num{
+              font-size: 17px;
+              color: #4c4747;
+            }
+          }
+        }
+      }
+      .car-info{
+        width: 70%;
+        float: left;
+        table{
+          font-size: 10px;
+          color: #4c4747;
+          tr{
+            th{
+              padding: 3px;
+              background: #ebe9e4;
+            }
+            td{
+              padding: 3px;
+            }
+          }
+          .car-info-long{
+            td{
+            }
+          }
+        }
+      }
+    }
+  }
+  nav{
+    margin: 0 auto;
+    width: 90%;
+  }
+}
+
+.cars-show-top{
+  width: 100%;
+  height: auto;
+  .content{
+    width: 100% !important;
+    position :relative;
+    .slick-next{
+      background: none;
+      border: none;
+      color: #fff;
+      position :absolute;
+      top: 45%;
+      right: 5px;
+    }
+    .slick-prev{
+      background: none;
+      border: none;
+      color: #fff;
+      position :absolute;
+      top: 45%;
+      left: 5px;
+      z-index: 3;
+    }
+    img{
+      height: 280px;
+      margin-right: 10px;
+      width: 100%;
+    }
+  }
+  .cars-show-top-name{
+    padding: 10px 20px;
+    background: #f5f4f0;
+    h2{
+      font-size: 15px;
+      font-weight: bold;
+    }
+    p{
+      font-size: 10px;
+      margin: 0;
+    }
+  }
+  .cars-show-top-info{
+    border-bottom: 1px solid #ddd;
+    .cars-show-top-info-price{
+      padding: 10px 10px 0 10px;
+      margin: 0;
+      p{
+        margin: 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      overflow: hidden;
+      li{
+        float: left;
+        width: 50%;
+        list-style-type: none;
+        color: #423e3e;
+      }
+      .info-price-num{
+        font-size: 22px;
+      }
+    }
+    .cars-show-top-info-fine{
+      padding: 10px;
+      margin: 0;
+      p{
+        margin: 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      overflow: hidden;
+      li{
+        float: left;
+        width: 20%;
+        list-style-type: none;
+        color: #423e3e;
+      }
+      .info-fine-text{
+        font-weight: bold;
+      }
+    }
+    a{
+      background: #FF8C00;
+      padding: 10px;
+      color: #fff;
+      width: 85%;
+      margin: 0 auto 10px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 15px;
+      border-radius: 5px;
+      display: block;
+    }
+  }
+}
+
+
+
+
+
+.car-main-area{
+  width: 95%;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+  .car-main-area-contents{
+    float: left;
+    width: 100%;
+    height: 100%;
+    h2{
+      font-size: 18px;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+    table{
+      margin-bottom: 20px;
+      border: 1px solid #eee;
+      overflow: hidden;
+      tr{
+        th{
+          font-size: 12px;
+          background: #f2f2f2;
+          width: 250px;
+          text-align: left;
+          padding: 15px 20px;
+          border-bottom: 1px solid #eee;
+        }
+        td{
+          font-size: 13px;
+          padding: 15px 20px;
+          border-right: 1px solid #eee;
+          width: 200px;
+          border-bottom: 1px solid #eee;
+        }
+      }
+    }
+    .car-show-items{
+      p{
+        margin: 0 0 15px 0;
+        font-size: 13px;
+      }
+      h2{
+        border-bottom: 2px solid;
+        padding-bottom: 5px;
+        font-size: 23px;
+        font-weight: bold;
+        margin: 0 0 15px 0;
+      }
+      blockquote{
+        margin: 0 0 15px 0;
+        p{
+          margin: 0;
+        }
+      }
+      .item-button{
+        background: -moz-linear-gradient(top, #FFF 0%, #EEE);
+        background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#EEE));
+        border: 1px solid #DDD;
+        color: #111;
+        padding: 15px 90px;
+        width: 100%;
+        text-align: center;
+        display: block;
+        margin-bottom: 15px;
+        &:hover{
+          background: #f3f3f3!important;
+          text-decoration:none;
+        }
+      }
+      img{
+        margin: 0 0 15px 0;
+        width: 100%;
+        max-height: 300px;
+      }
+    }
+  }
+  .car-main-area-info{
+    float: left;
+    width: 0%;
+    height: 100%;
+  }
+  .car-equipment{
+    overflow: hidden;
+    padding: 0;
+    margin: 0 0 20px 0;
+    li{
+      list-style-type: none;
+      float: left;
+      margin: 0 6px 6px 0;
+      border-left: 3px solid;
+      width: 48%;
+      color: #ff6010;
+      padding: 3px;
+      font-size: 12px;
+      font-weight: bold;
+      background-color: #faede1;
+    }
+  }
+}
+
+
+
+

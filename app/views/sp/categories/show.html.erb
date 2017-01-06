@@ -1,0 +1,6 @@
+<div class="wrapp">
+  <% case @categorys.id %>
+    <% when 1 %>
+      <%= render 'car_purchase', category: @categorys, maker: @maker, body_type: @body_type %>
+  <% end %>
+</div>

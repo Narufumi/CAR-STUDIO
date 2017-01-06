@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CarMedia</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'pc/application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'pc/application', 'data-turbolinks-track': 'reload' %>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js" type="text/javascript" ></script>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-wrapp">
+        <h1><%= link_to "CAR STUDIO", category_path(1) %></h1>
+        <nav>
+          <% if user_signed_in? %>
+            <%= link_to 'プロフィール変更', edit_user_registration_path %> |
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> |
+            <%= link_to "記事作成", new_car_path, data: {"turbolinks" => false} %>
+          <% else %>
+            <%= link_to "サインイン", new_user_registration_path %> |
+            <%= link_to "ログイン", new_user_session_path %>
+          <% end %>
+        </nav>
+      </div>
+    </header>
+    <div class="category-list">
+      <ul>
+        <% @category.each.with_index(1) do |c, n| %>
+          <% if n == 3 %>
+            <li><%= link_to c.name, "https://ikkatsu-satei.com/indexd.php" %></li>
+          <% else %>
+            <li><%= link_to c.name, category_path(n) %></li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+    <%= yield %>
+    <footer>
+      <div class="footer-wrapp">
+        <ul class="footer_column">
+          <li class="footer_columns">
+            <h3>カテゴリー 一覧</h3>
+            <ul>
+              <li><%= link_to "中古車を買う", category_path(1) %></li>
+              <li><%= link_to "メンテナンス・修理", category_path(2) %></li>
+              <li><%= link_to "新車を買う", category_path(3) %></li>
+              <li><%= link_to "車検", category_path(4) %></li>
+              <li><%= link_to "車を売る", category_path(5) %></li>
+              <li><%= link_to "自動車保険", category_path(6) %></li>
+              <li><%= link_to "事故車回収", category_path(7) %></li>
+              <li><%= link_to "バイク", category_path(8) %></li>
+              <li><%= link_to "カー用品・パーツ", category_path(9) %></li>
+            </ul>
+          </li>
+          <li class="footer_columns">
+            <h3>人気メーカー 一覧</h3>
+            <ul>
+              <li><%= link_to "トヨタ", cars_path(maker_id: 1) %></li>
+              <li><%= link_to "スバル", cars_path(maker_id: 9) %></li>
+              <li><%= link_to "日産", cars_path(maker_id: 2) %></li>
+              <li><%= link_to "三菱", cars_path(maker_id: 5) %></li>
+              <li><%= link_to "ホンダ", cars_path(maker_id: 3) %></li>
+              <li><%= link_to "ベンツ", cars_path(maker_id: 12) %></li>
+              <li><%= link_to "マツダ", cars_path(maker_id: 4) %></li>
+              <li><%= link_to "BMW", cars_path(maker_id: 11) %></li>
+              <li><%= link_to "スズキ", cars_path(maker_id: 7) %></li>
+              <li><%= link_to "アウディ", cars_path(maker_id: 13) %></li>
+              <li><%= link_to "レクサス", cars_path(maker_id: 6) %></li>
+              <li><%= link_to "フォルクスワーゲン", cars_path(maker_id: 14) %></li>
+            </ul>
+          </li>
+          <li class="footer_columns">
+            <h3>CAR STUDIOについて</h3>
+            <ul>
+              <li><%= link_to "サイトマップ" %></li>
+              <li><%= link_to "運営会社", "http://telescope.co.jp/", target: ["_blank"] %></li>
+              <li><%= link_to "カテゴリー一覧" %></li>
+              <li><%= link_to "広告掲載に関するお問い合わせ" %></li>
+              <li><%= link_to "メーカー一覧" %></li>
+              <li><%= link_to "その他お問い合わせ" %></li>
+              <li><%= link_to "車種名一覧" %></li>
+              <li><%= link_to "プライバシーポリシー" %></li>
+              <li><%= link_to "利用規約" %></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-text">
+        <div class="footer-text-width">
+          <p class="footer-text-left">CAR STUDIO</p>
+          <p class="footer-text-right">Copyright©Telescope Inc. All Rights Reserved</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

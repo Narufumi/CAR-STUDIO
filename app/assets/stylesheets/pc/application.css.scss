@@ -1,0 +1,183 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree ../pc
+ *= require pc/slick.css
+ *= require_self
+ */
+
+@import "bootstrap";
+
+html, body{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
+
+header{
+  width: 100%;
+  overflow: hidden;
+  height: 70px;
+  margin: 0 auto;
+  .header-wrapp{
+    width: 900px;
+    margin: 0 auto;
+    h1{
+      float: left;
+      width: 300px;
+      margin: 0;
+      line-height: 70px;
+      a{
+        color: black;
+        text-decoration: none;
+      }
+    }
+    nav{
+      float: right;
+      width: 340px;
+      line-height: 70px;
+      text-align: right;
+    }
+  }
+}
+
+footer{
+  margin-top: 100px;
+  width: 100%;
+  .footer-wrapp{
+    padding: 45px;
+    border-top: 2px solid orange;
+    border-bottom: 2px solid orange;
+    width: 1010px;
+    height: 300px;
+    margin: 0 auto;
+    .footer_column{
+      padding: 0;
+      overflow: hidden;
+      h3{
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 25px;
+      }
+      li{
+        list-style: none;
+        width: 33%;
+        float: left;
+      }
+      .footer_columns{
+        ul{
+          padding: 0;
+          overflow: hidden;
+          li:nth-child(odd){
+            width: 40%;
+            float: left;
+            a{
+              color: #444444;
+              font-size: 13px;
+            }
+          }
+          li:nth-child(even){
+            width: 60%;
+            float: left;
+            a{
+              color: #444444;
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer-text{
+    width: 100%;
+    height: 60px;
+    .footer-text-width{
+      width: 1010px;
+      margin: 0 auto;
+      overflow: hidden;
+      .footer-text-left{
+        line-height: 60px;
+        float: left;
+        width: 200px;
+        font-size: 13px;
+        padding-left: 15px;
+        font-weight: 100;
+        margin: 0;
+      }
+      .footer-text-right{
+        line-height: 60px;
+        float: right;
+        width: 500px;
+        text-align: right;
+        font-size: 13px;
+        padding-right: 15px;
+        font-weight: 100;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.wrapp{
+  width: 900px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.category-list{
+  background: orenge;
+  font-size: 0;
+  width: 100%;
+  background: #FF8C00;
+  margin: 0;
+  ul{
+    width: 900px;
+    margin: 0 auto;
+    padding: 0;
+    display: table;
+  }
+  li{
+    display: table-cell;
+    font-size: 12px;
+    padding: 5px 10px;
+    width: auto;
+    font-weight: bold;
+    text-align: center;
+    border-right: 1px solid #fff;
+    a{
+      color: #fff;
+    }
+    &:first-child{
+      border-left: 1px solid #fff;
+    }
+    &:hover{
+      background: #fff;
+      color: #FF8C00;
+      a{
+        color: #FF8C00;
+      }
+    }
+  }
+}
+
+.btn-basic{
+  color: #fff!important;
+  font-size: 13px;
+  width: 100px;
+  background: #F57C00;
+  height: 34px!important;
+  border: none;
+  &:hover{
+    background: #EF6C00;
+  }
+}

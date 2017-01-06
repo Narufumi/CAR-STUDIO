@@ -1,0 +1,117 @@
+<div class="wrapp">
+  <h2 class="maker-title">メーカー一覧</h2>
+  <div class="maker-country">
+    <div class="makers">
+      <div class="country-name">
+        <%= image_tag "日本.jpg" %>
+        <h3>日本</h3>
+      </div>
+      <ul>
+        <% @japan.each do |j| %>
+          <li>
+            <%= image_tag "#{j.name}.jpg" %>
+            <%= j.name %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="makers">
+      <div class="country-name">
+        <%= image_tag "ドイツ.jpg" %>
+        <h3>ドイツ</h3>
+      </div>
+      <ul>
+        <% @germany.each do |g| %>
+          <li>
+            <%= image_tag "#{g.name}.jpg" %>
+            <%= g.name %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="makers">
+      <div class="country-name">
+        <%= image_tag "アメリカ.jpg" %>
+        <h3>アメリカ</h3>
+      </div>
+      <ul>
+        <% @america.each do |a| %>
+          <li>
+            <%= image_tag "#{a.name}.jpg" %>
+            <%= a.name %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="makers">
+      <div class="country-name">
+        <%= image_tag "イギリス.jpg" %>
+        <h3>イギリス</h3>
+      </div>
+      <ul>
+        <% @england.each do |e| %>
+          <li>
+            <%= image_tag "#{e.name}.jpg" %>
+            <%= e.name %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="makers">
+      <div class="country-name">
+        <%= image_tag "イタリア.jpg" %>
+        <h3>イタリア</h3>
+      </div>
+      <ul>
+        <% @italy.each do |i| %>
+          <li>
+            <%= image_tag "#{i.name}.jpg" %>
+            <%= i.name %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="makers">
+      <div class="country-name">
+        <%= image_tag "フランス.jpg" %>
+        <h3>フランス</h3>
+      </div>
+      <ul>
+        <% @france.each do |f| %>
+          <li>
+            <%= image_tag "#{f.name}.jpg" %>
+            <%= f.name %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="makers">
+      <div class="country-name">
+        <%= image_tag "スウェーデン.jpg" %>
+        <h3>スウェーデン</h3>
+      </div>
+      <ul>
+        <% @sweden.each do |s| %>
+          <li>
+            <%= image_tag "#{s.name}.jpg" %>
+            <%= s.name %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="makers">
+      <div class="country-name">
+        <%= image_tag "韓国.jpg" %>
+        <h3>韓国</h3>
+      </div>
+      <ul>
+        <% @korea.each do |k| %>
+          <li>
+            <%= image_tag "#{k.name}.jpg" %>
+            <%= k.name %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

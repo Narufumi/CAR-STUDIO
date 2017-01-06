@@ -1,0 +1,95 @@
+// Place all the styles related to the categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.category-top{
+  width: 100%;
+  height: auto;
+}
+
+.category-search-field{
+  width: 95%;
+  height: auto;
+  border: 1px solid #ddd;
+  margin: 20px auto 0;
+  h3{
+    font-size: 17px;
+    color: #353434;
+    font-weight: bold;
+    margin: 15px 0;
+  }
+  .search-label{
+    padding: 0 10px;
+    h3{
+      color: #ff7607;
+    }
+  }
+  .search-free-word{
+    padding: 0 10px;
+    border-top: 1px solid #ddd;
+    .input-group{
+      margin-bottom: 15px;
+    }
+    .input-group-btn{
+      .btn-default{
+        background: #FF8C00;
+        color: #fff;
+      }
+    }
+  }
+  .search-makers{
+    padding: 0 10px;
+    border-top: 1px solid #ddd;
+    ul{
+      overflow: hidden;
+      padding: 0;
+      li{
+        width: 20%;
+        height: 70px;
+        float: left;
+        list-style-type: none;
+        margin-bottom: 5px;
+        img{
+          width: 44px;
+          height: 44px;
+        }
+        a{
+          text-align: center;
+        }
+        span{
+          text-align: center;
+          color: black;
+          font-size: 10px;
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+    }
+  }
+  .search-type{
+    padding: 0 10px;
+    border-top: 1px solid #ddd;
+    ul{
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      li{
+        float: left;
+        font-size: 13px;
+        text-align: center;
+        width: 33%;
+        list-style-type: none;
+        display: block;
+        height: 50px;
+        padding: 0 10px;
+        a{
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+

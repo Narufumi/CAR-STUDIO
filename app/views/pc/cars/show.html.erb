@@ -1,0 +1,205 @@
+<div class="car-wrapp">
+  <div class="car-top-area">
+    <h2><%= @cars.maker.name %></h2>
+    <div class="car-top-area-info">
+      <div class="content">
+        <div class="slider single-item">
+          <% @cars.car_images.each do |c| %>
+            <div><img src="<%= c.url %>"/></div>
+          <% end %>
+        </div>
+      </div>
+      <div class="car-top-area-info-right">
+        <ul class="car-top-area-info-price">
+          <li>
+            <p>本体価格</p>
+            <p class="car-top-area-info-price-big"><%= @cars.base_price %>万円</p>
+          </li>
+          <li>
+            <p>支払総額</p>
+            <p class="car-top-area-info-price-big"><%= @cars.total_price %>万円</p>
+          </li>
+        </ul>
+        <ul class="car-top-area-fine-info">
+          <li>
+            <p>年式</p>
+            <p class="car-top-area-fine-info-big"><%= @cars.model_year %></p>
+          </li>
+          <li>
+            <p>走行距離</p>
+            <p class="car-top-area-fine-info-big"><%= @cars.mileage %></p>
+          </li>
+          <li>
+            <p>車検有無</p>
+            <p class="car-top-area-fine-info-big"><%= @cars.vehicle_inspection %></p>
+          </li>
+          <li>
+            <p>修理歴</p>
+            <p class="car-top-area-fine-info-big"><%= @cars.repaired %></p>
+          </li>
+          <li>
+            <p>地域</p>
+            <p class="car-top-area-fine-info-big"><%= @cars.model_year %></p>
+          </li>
+        </ul>
+        <%= link_to "在庫確認・見積依頼", @cars.url %>
+      </div>
+    </div>
+  </div>
+  <div class="car-main-area">
+    <div class="car-main-area-contents">
+      <h2>状態</h2>
+      <table>
+        <tr>
+          <th>年式(初度登録年)</th>
+          <td><%= @cars.conditions[0].model_year %></td>
+          <th>ワンオーナー</th>
+          <td><%= @cars.conditions[0].one_owner%></td>
+        </tr>
+        <tr>
+          <th>走行距離</th>
+          <td><%= @cars.conditions[0].mileage %></td>
+          <th>キャンピングカー</th>
+          <td><%= @cars.conditions[0].camper %></td>
+        </tr>
+        <tr>
+          <th>修復歴</th>
+          <td><%= @cars.conditions[0].repaired %></td>
+          <th>福祉車両</th>
+          <td><%= @cars.conditions[0].welfare %></td>
+        </tr>
+        <tr>
+          <th>定期点検記録簿</th>
+          <td><%= @cars.conditions[0].periodic_Inspection_record_book %></td>
+          <th>新車物件</th>
+          <td><%= @cars.conditions[0].new_property %></td>
+        </tr>
+        <tr>
+          <th>禁煙車</th>
+          <td><%= @cars.conditions[0].non_smoking %></td>
+          <th>正規輸入車</th>
+          <td><%= @cars.conditions[0].regular_imported %></td>
+        </tr>
+        <tr>
+          <th>リサイクル料</th>
+          <td><%= @cars.conditions[0].recycling_fee %></td>
+          <th>登録済 未使用車</th>
+          <td><%= @cars.conditions[0].registered_unused %></td>
+        </tr>
+        <tr>
+          <th>エコカー減税対象車</th>
+          <td><%= @cars.conditions[0].eco_car %></td>
+          <th>車検</th>
+          <td><%= @cars.conditions[0].inspection %></td>
+        </tr>
+        <tr>
+          <th>法定整備</th>
+          <td><%= simple_format(h(@cars.conditions[0].statutory_maintenance)) %></td>
+          <th>保証</th>
+          <td><%= simple_format(h(@cars.conditions[0].security)) %></td>
+        </tr>
+      </table>
+
+      <h2>基本スペック</h2>
+      <table>
+        <tr>
+          <th>ボディタイプ</th>
+          <td><%= @cars.specs[0].body_type %></td>
+          <th>駆動方式</th>
+          <td><%= @cars.specs[0].drive_system %></td>
+        </tr>
+        <tr>
+          <th>色</th>
+          <td><%= @cars.specs[0].color %></td>
+          <th>ハンドル</th>
+          <td><%= @cars.specs[0].handle %></td>
+        </tr>
+        <tr>
+          <th>車台末尾番号</th>
+          <td><%= @cars.specs[0].last_number %></td>
+          <th>ミッション</th>
+          <td><%= @cars.specs[0].mission %></td>
+        </tr>
+        <tr>
+          <th>排気量</th>
+          <td><%= @cars.specs[0].displacement %></td>
+          <th>乗車定員</th>
+          <td><%= @cars.specs[0].passenger_capacity %></td>
+        </tr>
+        <tr>
+          <th>エンジン種別</th>
+          <td><%= @cars.specs[0].engine_type %></td>
+          <th>ドア数</th>
+          <td><%= @cars.specs[0].door %></td>
+        </tr>
+      </table>
+
+      <h2>新車時の基本スペック</h2>
+      <table>
+        <tr>
+          <th>発売年月</th>
+          <td><%= @cars.new_car_specs[0].release_date %></td>
+          <th>ホイールベース</th>
+          <td><%= @cars.new_car_specs[0].wheelbase %>mm</td>
+        </tr>
+        <tr>
+          <th>車体寸法</th>
+          <td><%= @cars.new_car_specs[0].body_dimension %></td>
+          <th>使用燃料</th>
+          <td><%= @cars.new_car_specs[0].used_fuel %></td>
+        </tr>
+        <tr>
+          <th>シート列数</th>
+          <td><%= @cars.new_car_specs[0].seat_num %></td>
+          <th>車両重量</th>
+          <td><%= @cars.new_car_specs[0].vehicle_weight %></td>
+        </tr>
+        <tr>
+          <th>室内</th>
+          <td><%= @cars.new_car_specs[0].indoor %></td>
+          <th>駆動方式</th>
+          <td><%= @cars.new_car_specs[0].drive_system %></td>
+        </tr>
+        <tr>
+          <th>JC08燃費</th>
+          <td><%= @cars.new_car_specs[0].fuel_jc08 %></td>
+          <th>最小回転半径</th>
+          <td><%= @cars.new_car_specs[0].turning_radius %>m</td>
+        </tr>
+        <tr>
+          <th>10.15燃費</th>
+          <td><%= @cars.new_car_specs[0].fuel_1015 %></td>
+          <th></th>
+          <td></td>
+        </tr>
+      </table>
+
+      <h2>装備仕様</h2>
+      <ul class="car-equipment">
+        <% @equipments.each do |e| %>
+          <li><%= e.name %></li>
+        <% end %>
+      </ul>
+
+      <div class="car-show-items">
+        <% @items.each do |i| %>
+          <% case i.item_type %>
+            <% when "text" %>
+              <%= simple_format(h(i.desc)) %>
+            <% when "header" %>
+              <h2><%= i.desc %></h2>
+            <% when "quote" %>
+              <blockquote><%= simple_format(h(i.desc)) %></blockquote>
+            <% when "button" %>
+              <%= link_to "#{i.desc}", i.link_url, :class => "item-button" %>
+            <% when "image" %>
+              <%= image_tag i.image, :class => "item-image" %>
+          <% end %>
+        <% end %>
+      </div>
+
+    </div>
+    <div class="car-main-area-info">
+    </div>
+  </div>
+</div>

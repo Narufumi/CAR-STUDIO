@@ -1,0 +1,44 @@
+<div class="category-top">
+  <div class="category-search-field">
+    <div class="search-label">
+      <h3>中古車情報検索</h3>
+    </div>
+    <div class="search-free-word">
+      <h3>フリーワードで検索</h3>
+      <%= search_form_for @search do |f| %>
+        <div class="input-group">
+          <%= f.text_field :car_type_name_cont, class: "form-control", placeholder: "例 トヨタ プリウス" %>
+          <span class="input-group-btn">
+            <%= f.submit '検索', class: "btn btn-default" %>
+          </span>
+        </div>
+      <% end %>
+    </div>
+    <div class="search-makers">
+      <h3>人気メーカー</h3>
+      <ul>
+        <% maker.each do |m| %>
+          <li>
+            <%= link_to cars_path(maker_id: m.id), data: {"turbolinks" => false} do %>
+              <div>
+                <%= image_tag "#{m.name}.jpg" %>
+              </div>
+              <span>
+                <%= m.name %>
+              </span>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="search-type">
+      <h3>タイプ</h3>
+      <ul>
+        <% body_type.each do |b| %>
+          <li><%= link_to "#{b.name}", cars_path(body_type_id: b.id), data: {"turbolinks" => false} %></li>
+        <% end %>
+        <li><%= link_to "その他" %></li>
+      </ul>
+    </div>
+  </div>
+</div>

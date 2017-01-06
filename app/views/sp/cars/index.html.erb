@@ -1,0 +1,122 @@
+<div class="cars-top">
+  <% if @makers %>
+    <h2 class="car-index-label"><%= @makers ? @makers.name : "「」" %>の中古車</h2>
+  <% else %>
+    <h2 class="car-index-label"><%= @body_type ? @body_type.name : "「」" %>の中古車</h2>
+  <% end %>
+  <div class="car-search-area">
+    <div class="car-search-select-area">
+      <% num = [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000] %>
+      <% year = [1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017] %>
+      <%= search_form_for @search do |f| %>
+        <ul>
+          <li>
+            <%= f.label :region, '車種' %>
+            <%= f.select :car_type_name_cont,
+              CarType.all.map { |c| c.name },
+              {:selected=>f.object.car_type_name_cont,
+                :include_blank=>"車種を選択"
+              },
+              class: "custom-select"
+            %>
+          </li>
+          <li>
+            <%= f.label :region, '地域' %>
+            <%= f.select :region_cont,
+              Car.pluck(:region).uniq,
+              {:selected=>f.object.region_cont, :include_blank=>"地域を選択"},
+              class: "custom-select"
+            %>
+          </li>
+          <li>
+            <%= f.label :district, '市町村区' %>
+            <%= f.select :district_cont, Car.pluck(:district).uniq, {:selected=>f.object.district_cont, :include_blank=>"市町村区を選択"}, class: "custom-select" %>
+          </li>
+          <li class="multiple-select">
+            <%= f.label :base_price, '価格帯' %>
+            <%= f.select :base_price_gteq, num, {:selected=>f.object.base_price_gteq.to_i, :include_blank=>"下限なし"}, class: "custom-select" if f.object.base_price_gteq %>
+            <%= f.select :base_price_gteq, num, {:include_blank=>"下限なし"}, class: "custom-select" if f.object.base_price_gteq == nil %>
+
+            <%= f.select :base_price_lteq, num, {:selected=>f.object.base_price_lteq.to_i, :include_blank=>"上限なし"}, class: "custom-select" if f.object.base_price_lteq %>
+            <%= f.select :base_price_lteq, num, {:include_blank=>"上限なし"}, class: "custom-select" if f.object.base_price_lteq == nil %>
+          </li>
+          <li class="multiple-select">
+            <%= f.label :model_year, '年式' %>
+            <%= f.select :model_year_gteq, year, {:selected=>f.object.model_year_gteq.to_i, :include_blank=>"下限なし"}, class: "custom-select" if f.object.model_year_gteq %>
+            <%= f.select :model_year_gteq, year, {:include_blank=>"下限なし"}, class: "custom-select" if f.object.model_year_gteq == nil %>
+
+            <%= f.select :model_year_lteq, year, {:selected=>f.object.model_year_lteq.to_i, :include_blank=>"上限なし"}, class: "custom-select" if f.object.model_year_lteq %>
+            <%= f.select :model_year_lteq, year, {:include_blank=>"上限なし"}, class: "custom-select" if f.object.model_year_lteq == nil %>
+          </li>
+          <li class="repaired-select">
+            <%= f.label :repaired, '修理歴' %>
+            <%= f.select :repaired_cont, ["なし", "あり"], {:selected=>f.object.repaired_cont, :include_blank=>"選択なし"}, class: "custom-select" %>
+          </li>
+        </ul>
+    </div>
+    <div class="car-search-submit-area">
+      <%= f.submit 'この条件で検索', id: "car-search-submit" %>
+    </div>
+    <% end %>
+  </div>
+  <div class="car-area">
+    <% @cars.each do |c| %>
+      <%= link_to car_path(c) do %>
+        <div class="car-contents">
+          <div class="car-contents-top">
+            <%= image_tag c.car_images.first.url if c.car_images.first %>
+            <div class="car-contents-top-name">
+              <h2><%= truncate(c.name, length: 50) %></h2>
+              <p><%= c.maker.name if c.maker %></p>
+            </div>
+          </div>
+          <div class="car-contents-bottom">
+            <div class="car-price">
+              <ul>
+                <li>
+                  <p>本体価格</p>
+                  <p class="car-price-num"><%= c.base_price %>万円</p>
+                </li>
+                <li>
+                  <p>支払い総額</p>
+                  <p class="car-price-num"><%= c.total_price %>万円</p>
+                </li>
+              </ul>
+            </div>
+            <div class="car-info">
+              <table>
+                <tr>
+                  <th>修理</th>
+                  <td><%= c.repaired %></td>
+                  <th>排気</th>
+                  <td><%= c.displacement %></td>
+                </tr>
+                <tr>
+                  <th>走行</th>
+                  <td><%= c.mileage %>万km</td>
+                  <th>年式</th>
+                  <td><%= c.model_year %></td>
+                </tr>
+              </table>
+              <table>
+                <tr class="car-info-long">
+                  <th>車検</th>
+                  <td><%= c.vehicle_inspection %></td>
+                </tr>
+                <tr class="car-info-long">
+                  <th>住所</th>
+                  <td><%= truncate(c.region, length: 15) %></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <%= paginate @cars %>
+  </div>
+</div>
+
+
+
+

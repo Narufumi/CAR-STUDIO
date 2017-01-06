@@ -1,0 +1,130 @@
+// Place all the styles related to the categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+p {
+  margin: 0;
+  // color: #666;
+  font-weight: bold;
+}
+
+.search-label{
+  margin: 30px 0 10px 0;
+  p{
+    margin: 0;
+    color: #FF8C00;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+.search-area{
+  width: 100%;
+  height: 900px;
+  border: 2px solid #ddd;
+  .search-top-area{
+    border-bottom: 2px solid #ddd;
+    height: 550px;
+    overflow: hidden;
+    .search-form{
+      float: left;
+      width: 50%;
+      height: 100%;
+      border-right: 2px solid #ddd;
+      .search-form-top{
+        padding: 20px;
+        height: 50%;
+        border-bottom: 2px solid #ddd;
+        #q_car_type_name_cont{
+          width: 99%;
+          margin-bottom:10px;
+        }
+        #q_region_cont{
+          width: 99%;
+          margin-bottom:10px;
+        }
+        #q_base_price_gteq{
+          width: 47%;
+        }
+        #q_base_price_lteq{
+          width: 47%;
+        }
+        #search-form-top-submit{
+          background: #FF8C00;
+          border: none;
+          color: #fff;
+          padding:8px 20px;
+          margin: 10px 4px 0 0;
+          float: right;
+        }
+      }
+      .search-form-bottom{
+        padding: 20px;
+        height: 50%;
+        .btn-default{
+          background: #FF8C00;
+          color: #fff;
+        }
+      }
+    }
+    .search-maker{
+      float: left;
+      width: 50%;
+      height: 100%;
+      padding: 20px;
+      ul{
+        padding: 0;
+        overflow: hidden;
+        li{
+          display: table-cell;
+          width: 17%;
+          float: left;
+          height: 105px;
+          text-align: center;
+          margin-left: 8px;
+          line-height: 15px;
+          a{
+            display: block;
+            color: #666;
+            font-weight: bold;
+            font-size: 13px;
+          }
+          img{
+            margin-bottom: 3px;
+            width: 60px;
+            height: 50px;
+          }
+        }
+      }
+      .to-maker-index{
+        color: #666;
+        font-weight: bold;
+        float: right;
+      }
+    }
+  }
+  .search-bottom-area{
+    height: 346px;
+    padding: 20px;
+    ul{
+      padding: 0;
+      overflow: hidden;
+      li{
+        font-size: 13px;
+        width: 16%;
+        float: left;
+        font-weight: bold;
+        line-height: 70px;
+        height: 70px;
+        text-align: center;
+        list-style-type: none;
+        a{
+          color: #666;
+        }
+      }
+    }
+  }
+}
+
+
+

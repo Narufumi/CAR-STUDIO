@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  release_date: MyString
+  wheelbase: 1
+  body_dimension: MyString
+  fuel: MyString
+  seat_num: 1
+  vehicle_weight: MyString
+  indoor: MyString
+  drive_system: MyString
+  jc08: 1
+  turning_radius: 1
+  1015: 1
+
+two:
+  release_date: MyString
+  wheelbase: 1
+  body_dimension: MyString
+  fuel: MyString
+  seat_num: 1
+  vehicle_weight: MyString
+  indoor: MyString
+  drive_system: MyString
+  jc08: 1
+  turning_radius: 1
+  1015: 1

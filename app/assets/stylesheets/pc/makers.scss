@@ -1,0 +1,57 @@
+// Place all the styles related to the makers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.maker-title{
+  font-size: 25px;
+  color: #666;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.maker-country{
+  .makers{
+    ul{
+      border-collapse: collapse;
+      overflow: hidden;
+      padding: 0;
+      border-top: 1px solid #666;
+      border-left: 1px solid #666;
+      word-break:break-all;
+      li{
+        word-break:break-all;
+        border-right: 1px solid #666;
+        border-bottom: 1px solid #666;
+        list-style-type: none;
+        float: left;
+        height: 65px;
+        width: 20%;
+        line-height: 40px;
+        font-weight: bold;
+        padding: 13px 0 10px 10px;
+        img{
+          margin-right: 5px;
+          float: left;
+          line-height: 65;
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+    .country-name{
+      overflow: hidden;
+      margin: 30px 0 10px 0;
+      h3{
+        font-size: 18px;
+        color: #666;
+        font-weight: bold;
+      }
+      img{
+        margin-right: 5px;
+        float: left;
+        width: 30px;
+        height: 20px;
+      }
+    }
+  }
+}

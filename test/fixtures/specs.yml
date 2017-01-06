@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  body_type: MyString
+  drive_system: MyString
+  color: MyString
+  handle: MyString
+  last_number: 1
+  mission: MyString
+  displacement: 1
+  passenger_capacity: 1
+  engine_type: MyString
+  door: 1
+  car_id: 1
+
+two:
+  body_type: MyString
+  drive_system: MyString
+  color: MyString
+  handle: MyString
+  last_number: 1
+  mission: MyString
+  displacement: 1
+  passenger_capacity: 1
+  engine_type: MyString
+  door: 1
+  car_id: 1

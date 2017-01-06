@@ -1,0 +1,84 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree ../sp
+ *= require pc/slick.css
+ *= require_self
+ */
+
+@import "bootstrap";
+
+header{
+  height: 50px;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+  h1{
+    margin: 0 auto;
+    width: 200px;
+    text-align: center;
+    line-height: 40px;
+    a{
+      color: black;
+      font-size: 25px;
+    }
+  }
+}
+
+footer{
+  margin: 100px 10px 0 10px;
+  height: auto;
+  .footer-wrapp{
+    height: auto;
+    border-top: 2px solid orange;
+    border-bottom: 2px solid orange;
+    .footer_column{
+      overflow: hidden;
+      margin: 0;
+      padding: 20px 10px;
+      li{
+        float: left;
+        width: 50%;
+        padding: 7px 0;
+        font-size: 10px;
+        list-style-type: none;
+        a{
+          color: black;
+        }
+      }
+    }
+  }
+  .footer-text{
+    height: 55px;
+    width: 100%;
+    .footer-text-width{
+        width: 70%;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 10px;
+      p{
+        font-size: 10px;
+        margin: 0;
+        color: #565454;
+      }
+    }
+  }
+}
+
+.page-link{
+  color: orange;
+}
+.page-item.active{
+  .page-link{
+    background-color: orange;
+    border-color: orange;
+  }
+}

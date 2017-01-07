@@ -603,6 +603,10 @@ blockquote:before{
       overflow: hidden;
       padding: 0;
       margin: 0 0 50px 0;
+      display:flex;
+      -webkit-box-lines:multiple;
+      -moz-box-lines:multiple;
+      flex-wrap:wrap;
       li{
         list-style-type: none;
         float: left;
@@ -614,7 +618,6 @@ blockquote:before{
         font-size: 12px;
         font-weight: bold;
         background-color: #faede1;
-
       }
     }
   }
